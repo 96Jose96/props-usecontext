@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom'
 
 export default function Calculator() {
     const { addNumber, selectedNumbers } = useContext(CalculatorContext)
-
     const handleButton = (e) => {
         const number = parseInt(e.target.value)
         addNumber(number)
         console.log(selectedNumbers)
     }
-
+    
   return (
     <>
         <div>
@@ -30,7 +29,7 @@ export default function Calculator() {
             <button className='zero' onClick={handleButton} value="0">0</button>
         </div>
         <div>
-            <Link to={'/result'}>Resultado</Link>
+            <Link className='resultBtm' to={'/result'}>Resultado</Link>
         </div>
     </>
   )
